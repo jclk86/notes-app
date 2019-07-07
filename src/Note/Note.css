@@ -1,0 +1,9 @@
+.note {
+  border: 1px black solid;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
