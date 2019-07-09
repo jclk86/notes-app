@@ -67,7 +67,7 @@ export default class AddFolder extends Component {
     return (
       <div>
         <form onSubmit={event => this.handleSubmit(event)}>
-          <label>Add Folder: </label>
+          <label htmlFor="title">Add Folder: </label>
           <input
             type="text"
             id="title"
@@ -78,12 +78,19 @@ export default class AddFolder extends Component {
             maxLength="20"
             placeholder="Enter folder title"
             required
+            aria-required="true"
+            aria-describedby="folderTitleConstraints"
           />
+          <p id="folderTitleConstraints" className="requiredField">
+            (Title must be between 4 and 20 characters long)
+          </p>
           {this.state.folder.touched && (
             <ValidationError message={this.validateTitle()} />
           )}
+
           <button type="submit">Submit</button>
         </form>
+        <button onClick={this.props.history.goBack}>Return</button>
       </div>
     );
   }

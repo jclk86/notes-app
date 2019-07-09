@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteListMain component renders a .NoteListMain by default 1`] = `
+<NoteListMain
+  notes={Array []}
+/>
+`;
+
+exports[`NoteListMain component renders a Note in ul for each notes in array 1`] = `null`;

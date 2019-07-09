@@ -88,7 +88,7 @@ export default class AddNote extends Component {
       <div className="form-container">
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="note-title-container">
-            <label>Enter Title:</label>
+            <label htmlFor="name">Enter Title:</label>
             <input
               type="text"
               name="name"
@@ -104,7 +104,9 @@ export default class AddNote extends Component {
             )}
           </div>
           <div className="content-container">
-            <label className="content-label">Enter Content: </label>
+            <label className="content-label" htmlFor="note content title">
+              Enter Content:{" "}
+            </label>
             <textarea
               defaultValue="Enter content"
               name="content"
@@ -114,13 +116,19 @@ export default class AddNote extends Component {
               onChange={e => this.updateContent(e.target.value)}
               placeholder="Enter Content"
               required
+              aria-required="true"
+              aria-describedby="mustEnterContent"
             />
           </div>
+          <p id="mustEnterContent">Note content entry required</p>
           <div className="folder-select-container">
+            <label htmlFor="folder selection">Select folder</label>
             <select
               name="folder"
               onChange={event => this.updateFolderId(event.target.value)}
               required
+              aria-required="true"
+              aria-describedby="mustSelectFolder"
             >
               <option value={null}>Select Folder</option>
               {this.context.folders.map(folder => (
@@ -129,11 +137,13 @@ export default class AddNote extends Component {
                 </option>
               ))}
             </select>
+            <p id="mustSelectFolder">Folder selection required</p>
           </div>
           <button type="submit" disabled={!this.state.folderId.touched}>
             Submit
           </button>
         </form>
+        <button onClick={this.props.history.goBack}>Return</button>
       </div>
     );
   }

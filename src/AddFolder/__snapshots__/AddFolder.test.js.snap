@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddItemForm component renders the complete form 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Add Folder: 
+    </label>
+    <input
+      defaultValue="Untitled Folder"
+      id="title"
+      maxLength="20"
+      minLength="4"
+      name="title"
+      onChange={[Function]}
+      placeholder="Enter folder title"
+      required={true}
+      type="text"
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

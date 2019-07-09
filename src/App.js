@@ -9,6 +9,7 @@ import NoteContent from "./NoteContent/NoteContent";
 import AddFolder from "./AddFolder/AddFolder";
 import AddNote from "./AddNote/AddNote";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import Note from "./Note/Note";
 
 class App extends Component {
   constructor(props) {
